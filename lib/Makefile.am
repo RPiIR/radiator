@@ -11,5 +11,5 @@ include_HEADERS         = info_rad.h
 
 lib_LTLIBRARIES         = libinfo_rad.la
 libinfo_rad_la_SOURCES     = info_rad.c
-libinfo_rad_la_LDFLAGS     = -no-undefined -version-info 0:0:0
+libinfo_rad_la_LDFLAGS     = -no-undefined -version-info 0:0:0 -lwiringPi
 #libinfo_rad_la_LIBADD      = replace/libreplace.la lib/library.la

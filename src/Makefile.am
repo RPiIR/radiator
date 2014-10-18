@@ -18,9 +18,10 @@ AUTOMAKE_OPTIONS = foreign
 CPPFLAGS                = -I$(top_srcdir)/lib
 
 bin_PROGRAMS = inforad
+inforad_LDADD       = ../lib/libinfo_rad.la -lwiringPi
 
 noinst_PROGRAMS            = test-light
 test_light_SOURCES     = test_light.c
-test_light_LDADD       = ../lib/libinfo_rad.la
+test_light_LDADD       = ../lib/libinfo_rad.la -lwiringPi
 
 

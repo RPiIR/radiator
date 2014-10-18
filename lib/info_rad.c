@@ -24,6 +24,7 @@
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
+#define HAVE_WIRINGPI_H
 #ifdef HAVE_WIRINGPI_H
 #include <wiringPi.h>
 #endif

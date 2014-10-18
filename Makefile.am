@@ -19,7 +19,7 @@ SUBDIRS = . lib src
 # Always include gtest in distributions.
 #DIST_SUBDIRS = $(subdirs) src
 
-CPPFLAGS                = -I$(top_srcdir)/lib
+CPPFLAGS                = -I$(top_srcdir)/lib -DHAVE_WIRINGPI_H
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = inforad.pc
