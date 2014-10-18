@@ -16,7 +16,7 @@ AC_INIT([Information Radiator],[1.0.0],[milan.dunghubel@gmail.com],[inforad])
 
 AM_MAINTAINER_MODE([enable])
 
-AC_CONFIG_SRCDIR(inforad.c)
+AC_CONFIG_SRCDIR(src/inforad.c)
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 
@@ -90,7 +90,7 @@ AC_CHECK_FUNCS([ftruncate memset mkdir strchr strerror strtol])
 export CFLAGS
 export CXXFLAGS
 
-AC_CONFIG_FILES([Makefile lib/Makefile inforad.pc])
+AC_CONFIG_FILES([Makefile lib/Makefile src/Makefile inforad.pc])
 AC_OUTPUT
 
 
