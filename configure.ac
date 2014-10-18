@@ -90,7 +90,7 @@ AC_CHECK_FUNCS([ftruncate memset mkdir strchr strerror strtol])
 export CFLAGS
 export CXXFLAGS
 
-AC_CONFIG_FILES([Makefile inforad.pc])
+AC_CONFIG_FILES([Makefile lib/Makefile inforad.pc])
 AC_OUTPUT
 
 
