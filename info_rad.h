@@ -25,8 +25,16 @@
 #ifndef INFO_RAD_H
 #define INFO_RAD_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 int i_rad_light(int value);
 int i_rad_display(const char* str);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
 

@@ -1,0 +1,12 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: Information Radiator
+Description: Information Radiator
+Version: @VERSION@
+Libs: -L${libdir} -linfo_rad @PTHREAD_CFLAGS@ @PTHREAD_LIBS@
+Libs.private: @LIBS@
+Cflags: -I${includedir} @PTHREAD_CFLAGS@
+

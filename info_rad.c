@@ -20,15 +20,19 @@
    the Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA
    02139, USA.
 */
+
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
+#ifdef HAVE_WIRINGPI_H
 #include <wiringPi.h>
+#endif
 
 #include "info_rad.h"
 
 #define LIGHT_PIN 29
 
+#ifdef HAVE_WIRINGPI_H
 int check_setup() {
 	static int setup_st = -1;
 	if (setup_st != 0) {
@@ -57,6 +61,17 @@ int i_rad_display(const char* str) {
 
 	return 0;
 }
+#else
+int i_rad_light(int value) {
+	printf(value ? "Light ON!!!\n" : "Light OFF!!!\n");
+	return 0;
+}
+
+int i_rad_display(const char* str) {
+	return 0;
+}
+#endif
+
 
 
 /* end of info_rad.c */
