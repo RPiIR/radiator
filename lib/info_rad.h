@@ -1,6 +1,6 @@
 /*
-   File name: info_rad.c
-   Date:      2014/10/18 07:03
+   File name: info_rad.h
+   Date:      2014/10/18 06:58
    Author:    
 
    Copyright (C) 2002 
@@ -20,43 +20,22 @@
    the Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA
    02139, USA.
 */
-#ifdef HAVE_CONFIG_H
-#include "config.h"
+
+
+#ifndef INFO_RAD_H
+#define INFO_RAD_H
+
+#ifdef __cplusplus
+extern "C" {
 #endif
-#include <wiringPi.h>
 
-#include "info_rad.h"
+int i_rad_light(int value);
+int i_rad_display(const char* str);
 
-#define LIGHT_PIN 29
-
-int check_setup() {
-	static int setup_st = -1;
-	if (setup_st != 0) {
-		setup_st = wiringPiSetup();
-	}
-	return setup_st;
+#ifdef __cplusplus
 }
+#endif
 
-int i_rad_light(int value) {
-	int status = -1;
-	if ((status = check_setup()) != 0) {
-		return status;
-	}
+#endif
 
-	pinMode(LIGHT_PIN, 1);
-  	digitalWrite(LIGHT_PIN, value);
-	return 0;
-}
-
-int i_rad_display(const char* str) {
-	int status = -1;
-	if ((status = check_setup()) != 0) {
-		return status;
-	}
-
-
-	return 0;
-}
-
-
-/* end of info_rad.c */
+/* end of info_rad.h */
