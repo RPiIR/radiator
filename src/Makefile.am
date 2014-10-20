@@ -17,8 +17,11 @@ AUTOMAKE_OPTIONS = foreign
 
 CPPFLAGS                = -I$(top_srcdir)/lib
 
-bin_PROGRAMS = inforad
+bin_PROGRAMS = inforad inforad-amqp
 inforad_LDADD       = ../lib/libinfo_rad.la -lwiringPi
+
+inforad_amqp_SOURCES = amqp_listen.c utils.c
+inforad_amqp_LDADD   = ../lib/libinfo_rad.la -lwiringPi -lrabbitmq
 
 noinst_PROGRAMS            = test-light
 test_light_SOURCES     = test_light.c
